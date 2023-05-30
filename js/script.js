@@ -34,12 +34,12 @@ const carousel = document.querySelector("div.container");
 let activeImg = 0;
 
 for (let i = 0; i < images.length; i++) {
-    carousel.innerHTML += `
+    carousel.innerHTML += `<div class = "img-container">
     <img src="${images[i].image}" alt="carousel img" class = "">
-    `;
+    </div>`;
 }
 
-let currentImg = document.querySelectorAll("img")[activeImg];
+let currentImg = document.querySelectorAll("div.img-container")[activeImg];
 currentImg.classList.add("d-block");
 
 document.querySelector(".back").addEventListener("click", function(){
@@ -50,8 +50,8 @@ document.querySelector(".back").addEventListener("click", function(){
         activeImg = activeImg - 1;
     }
     
-    document.querySelector("img.d-block").classList.remove("d-block");
-    document.querySelectorAll("img")[activeImg].classList.add("d-block");
+    document.querySelector("div.img-container.d-block").classList.remove("d-block");
+    document.querySelectorAll("div.img-container")[activeImg].classList.add("d-block");
 });
 
 document.querySelector(".next").addEventListener("click", function(){
@@ -62,6 +62,6 @@ document.querySelector(".next").addEventListener("click", function(){
         activeImg = activeImg + 1;
     }
     
-    document.querySelector("img.d-block").classList.remove("d-block");
-    document.querySelectorAll("img")[activeImg].classList.add("d-block");
+    document.querySelector("div.img-container.d-block").classList.remove("d-block")
+    document.querySelectorAll("div.img-container")[activeImg].classList.add("d-block");
 });
