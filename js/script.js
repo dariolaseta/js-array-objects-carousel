@@ -49,3 +49,13 @@ document.querySelector(".back").addEventListener("click", function(){
     document.querySelector("img.d-block").classList.remove("d-block");
     document.querySelectorAll("img")[activeImg].classList.add("d-block");
 });
+
+document.querySelector(".next").addEventListener("click", function(){
+    if(activeImg = images.length - 1){
+        activeImg = 0;
+        console.log(activeImg)
+    }
+    
+    document.querySelector("img.d-block").classList.remove("d-block");
+    document.querySelectorAll("img")[activeImg].classList.add("d-block");
+});
