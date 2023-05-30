@@ -8,6 +8,7 @@ img{
     width: 100%;
     height: 100%;
     object-fit: cover;
+    display: none;
 }
 
 div.container{
@@ -42,4 +43,12 @@ div.back {
 div.next{
     top: 50%;
     right: 2%;
+}
+
+.container{
+    display: none;
+}
+
+.d-block{
+    display: block;
 }

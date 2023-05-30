@@ -30,9 +30,22 @@ const images = [
     }
 ];
 
-// Test to create layout
-let carouselEl = document.getElementsByClassName("container");
-let img = document.createElement("img");
-img.src = "img/01.webp";
+const carousel = document.querySelector("div.container");
+let activeImg = 0;
 
-document.getElementById("test").appendChild(img);
+for (let i = 0; i < images.length; i++) {
+    carousel.innerHTML += `<img src="${images[i].image}" alt="carousel img" class = "">`;
+}
+
+let currentImg = document.querySelectorAll("img")[activeImg];
+currentImg.classList.add("d-block");
+
+document.querySelector(".back").addEventListener("click", function(){
+    if(activeImg == 0){
+        activeImg = images.length - 1;
+        console.log(activeImg)
+    }
+    
+    document.querySelector("img.d-block").classList.remove("d-block");
+    document.querySelectorAll("img")[activeImg].classList.add("d-block");
+});
