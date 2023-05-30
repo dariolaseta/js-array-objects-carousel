@@ -8,5 +8,22 @@ div.container{
     height: 500px;
     width: 800px;
     margin: 2rem auto;
+    position: relative;
     background-color: red;
+}
+
+div.back,
+div.next{
+    display: flex;
+    position: absolute;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    background-color: blue;
+}
+
+div.back i,
+div.next i{
+    margin: auto;
 }
