@@ -34,7 +34,9 @@ const carousel = document.querySelector("div.container");
 let activeImg = 0;
 
 for (let i = 0; i < images.length; i++) {
-    carousel.innerHTML += `<img src="${images[i].image}" alt="carousel img" class = "">`;
+    carousel.innerHTML += `
+    <img src="${images[i].image}" alt="carousel img" class = "">
+    `;
 }
 
 let currentImg = document.querySelectorAll("img")[activeImg];
@@ -44,6 +46,8 @@ document.querySelector(".back").addEventListener("click", function(){
     if(activeImg == 0){
         activeImg = images.length - 1;
         console.log(activeImg)
+    }else{
+        activeImg = activeImg - 1;
     }
     
     document.querySelector("img.d-block").classList.remove("d-block");
@@ -51,9 +55,11 @@ document.querySelector(".back").addEventListener("click", function(){
 });
 
 document.querySelector(".next").addEventListener("click", function(){
-    if(activeImg = images.length - 1){
+    if(activeImg == images.length - 1){
         activeImg = 0;
         console.log(activeImg)
+    }else{
+        activeImg = activeImg + 1;
     }
     
     document.querySelector("img.d-block").classList.remove("d-block");
