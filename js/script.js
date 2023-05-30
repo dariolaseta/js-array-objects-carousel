@@ -30,3 +30,9 @@ const images = [
     }
 ];
 
+// Test to create layout
+let carouselEl = document.getElementsByClassName("container");
+let img = document.createElement("img");
+img.src = "img/01.webp";
+
+document.getElementById("test").appendChild(img);
